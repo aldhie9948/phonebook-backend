@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
 	"deploy": "git push heroku main",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+	"deploy:full":"git add . && git commit -m buildui && git push && npm run deploy"
   },
   "author": "Aldi Gunawan",
   "license": "MIT",
