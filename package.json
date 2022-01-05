@@ -9,7 +9,7 @@
     "dev": "nodemon index.js",
 	"deploy": "git push heroku master",
     "logs:prod": "heroku logs --tail",
-	"deploy:full":"git add . && git commit -m buildui && git push && npm run deploy"
+	"deploy:full":"git add . && git commit -m buildui && git push && npm run deploy && heroku open && npm run logs:prod"
   },
   "author": "Aldi Gunawan",
   "license": "MIT",
