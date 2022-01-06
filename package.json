@@ -7,15 +7,19 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-	"deploy": "git push heroku master",
-    "logs:prod": "heroku logs --tail",
-	"deploy:full":"git add . && git commit -m buildui && git push && npm run deploy && heroku open && npm run logs:prod"
+    "build:ui": "rm -rf build && cd ../part3-b/ && npm run build && cp -r build ../../../notes-app",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail"
   },
   "author": "Aldi Gunawan",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.2",
+    "mongoose": "^6.1.5",
+    "mongoose-unique-validator": "^3.0.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
